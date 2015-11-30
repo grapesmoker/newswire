@@ -97,6 +97,7 @@ BOWER_INSTALLED_APPS = (
     'jquery-ui',
     'fontawesome',
     'backbone',
+    'requirejs'
 )
 
 # Internationalization

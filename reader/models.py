@@ -2,11 +2,9 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Reader(models.Model):
+class Tag(models.Model):
 
-    user = models.OneToOneField(User)
-    rating = models.ManyToManyField(NewsSource)
-    friends = models.ForeignKey('self')
+    tag = models.CharField(max_length=250)
 
 
 class NewsSource(models.Model):
@@ -15,7 +13,10 @@ class NewsSource(models.Model):
     category = models.ForeignKey(Tag)
 
 
-class Tag(models.Model):
+class Reader(models.Model):
 
-    tag = models.CharField(max_length=250)
-    
+    user = models.OneToOneField(User)
+    rating = models.ManyToManyField(NewsSource)
+    friends = models.ForeignKey('self')
+
+
